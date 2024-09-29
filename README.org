@@ -25,7 +25,7 @@ Just change the class name in the Preamble drawer and follow the directions belo
 I found that the default book template has too many limitations.
 I found that the svmono class best met my needs. 
 It is the class used by the publisher Springer.
-You must add the **svmono** class to the variable *org-latex-classes* after entering M-x customize.
+You must add the *svmono* class to the variable *org-latex-classes* after entering M-x customize.
 See the image below for guidance.
 This step will take five minutes.
 
@@ -39,7 +39,7 @@ Even an org document can be problematic when a document has hundreds of headline
 I would never try to assemble a book from a single org file.
 Instead, I use a central main.org to include individual chapters in separate document files.
 
-This modular approach can isolate problematic chapters by commenting them out in the master main.org document.
+This modular approach can isolate problematic chapters by commenting them out in the master *main.org* document.
 This allows you to proceed with compiling the document until you have time to deal with whatever exists in that problematic file.
 The PDF and plain text files do not have those issues.
 
@@ -55,20 +55,17 @@ Unfortunately, computer memory limits how many kinds of lists and indices you ca
 You may have to select a subset.
 
 I have ported my favorite LaTeX book template to org-mode because many org users are uncomfortable using pure LaTeX.
-This template depends upon the svmono.cls.
+This template depends upon the *svmono.cls*.
 It took me about a day to discover that I had to customize the org-latex-classes variable by adding svmono as a class.
 After I had completed this operation, the PDF would be compiled correctly with narrow margins and indices.
 The image below shows a snapshot of the customization menu.
-The top entry is for one of the default formats, of which there are three: article, book, and Report.
-The bottom entry shows the one for svmono.
+The top entry is for one of the default formats, of which there are three: article, book, and report.
+The bottom entry shows the one for *svmono*.
 
-
-./images/customizatonForSVmonoclass.png
-
-My Approach is to use a 0AAAmain.org file as the central node of the book. 
+My Approach is to use a *0AAAmain.org* file as the central node of the book. 
 It includes statements to import individual chapters and appendices, which are also chapters but enumerated with letters.
-The chapters and appendices are stored in a **Contents** subfolder.
-They are named **Chwhatever.org**.
+The chapters and appendices are stored in a *Contents* subfolder.
+They are named *Chwhatever.org*.
 
 If the chapters are grouped into parts, I may indicate membership of a part by using a number in front of `Ch'.
 I tend to do this when there are 20 or more chapters.
@@ -76,7 +73,7 @@ I tend to do this when there are 20 or more chapters.
 The images are stored in a figs sub-sub folder.
 The code listings are stored in a subsubfolder named codeListings 
 
-The file **0AAAmain.org** is the analog of **main.tex** in LaTeX multiple-part documents.
+The file *0AAAmain.org* is the analog of *main.tex* in LaTeX multiple-part documents.
 This filename appears near the top of the list of files in a directory.
 This eases the rediscovery of this master file.
 You will have to edit this file as you add more chapters.
