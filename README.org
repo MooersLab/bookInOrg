@@ -29,7 +29,7 @@ You must add the **svmono** class to the variable *org-latex-classes* after ente
 See the image below for guidance.
 This step will take five minutes.
 
-./images/customizationForSVmononclass.png
+[[./images/customizationForSVmononclass.png]]
 
 ** Needs that are met by this template
 
@@ -67,8 +67,8 @@ The bottom entry shows the one for svmono.
 
 My Approach is to use a 0AAAmain.org file as the central node of the book. 
 It includes statements to import individual chapters and appendices, which are also chapters but enumerated with letters.
-The chapters and appendices are stored in a Contents subfolder.
-They are named Chwhatever.org.
+The chapters and appendices are stored in a **Contents** subfolder.
+They are named **Chwhatever.org**.
 
 If the chapters are grouped into parts, I may indicate membership of a part by using a number in front of `Ch'.
 I tend to do this when there are 20 or more chapters.
@@ -76,7 +76,7 @@ I tend to do this when there are 20 or more chapters.
 The images are stored in a figs sub-sub folder.
 The code listings are stored in a subsubfolder named codeListings 
 
-The file 0AAAmain.org is the analog of main.tex in LaTeX multiple-part documents.
+The file **0AAAmain.org** is the analog of **main.tex** in LaTeX multiple-part documents.
 This filename appears near the top of the list of files in a directory.
 This eases the rediscovery of this master file.
 You will have to edit this file as you add more chapters.
