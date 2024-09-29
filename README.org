@@ -83,10 +83,11 @@ This preamble imports LaTeX packages and contains the settings that format the d
 You do not need to fiddle with these settings most of the time, so you may want to keep the settings out of sight and out of mind.
 You also do not want to inadvertently copy or paste anything into this area.
 
+** Update table
+
 |Version |Changes                                                                                               |Date                  |
 |--------+------------------------------------------------------------------------------------------------------+----------------------|
 |   0.1  | Initiate project. Added badges, funding, and update table.                                           | 2024 September 29    |
-
 
 
 ** Sources of funding
@@ -95,4 +96,4 @@ You also do not want to inadvertently copy or paste anything into this area.
 - NIH: R01 AI088011
 - NIH: P30 CA225520 (PI: R. Mannel)
 - NIH: P20 GM103640 and P30 GM145423 (PI: A. West)
-Sources
+
