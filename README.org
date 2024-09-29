@@ -10,16 +10,13 @@ Furthermore, they might have the vain hope of publishing this book someday, but 
 Once the skeleton of the book document has been assembled, its style can be easily changed by changing the class to meet the needs of a specific publisher.
 Usually, these notebooks require a great deal of time and energy to rewrite their prose to be suitable for publication.
 Usually, the incentive for doing so is too weak compared to other pressures and priorities.
-
 Very often, assembling the material is the limit of the self-study.
 This is sufficient for the moment's needs, such as mastering a new skill to be deployed in a new project.
 
 You could use this org-mode book as a template to assemble a dissertation.
 Many universities require you to use a specific LaTeX class because they want a uniform style across all dissertations assembled with LaTeX. 
 You can adapt this template by changing document classes in the preamble of the main.org file.
-
-
-It will probably take a lot of pressure from Below to get them to add support for org-mode.
+It will probably take a lot of pressure from below to get them to add support for org-mode.
 Part of the problem is that few librarians know how to use LaTeX let alone org-mode.
 Just change the class name in the Preamble drawer and follow the directions below to add a new class to the list of available classes in the variable ~org-latex-classes~.
 
@@ -28,9 +25,11 @@ Just change the class name in the Preamble drawer and follow the directions belo
 I found that the default book template has too many limitations.
 I found that the svmono class best met my needs. 
 It is the class used by the publisher Springer.
-You must add this class to the variable *org-latex-classes* after entering M-x customize.
+You must add the **svmono** class to the variable *org-latex-classes* after entering M-x customize.
 See the image below for guidance.
-This step will take five minutes; it is more tedious than hard to do.
+This step will take five minutes.
+
+./images/customizationForSVmononclass.png
 
 ** Needs that are met by this template
 
