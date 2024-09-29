@@ -84,7 +84,7 @@ You do not need to fiddle with these settings most of the time, so you may want 
 You also do not want to inadvertently copy or paste anything into this area.
 
 |Version |Changes                                                                                               |Date                  |
-|:-----  |:-----------------------------------------------------------------------------------------------------|:--------------------:|
+|--------+------------------------------------------------------------------------------------------------------+----------------------|
 |   0.1  | Initiate project. Added badges, funding, and update table.                                           | 2024 September 29    |
 
 
