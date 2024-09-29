@@ -1,0 +1,63 @@
+%!TEX root = ../0AAAmain.org
+
+
+#+LATEX: \chapter{Introduction}
+\epigraph{In God we trust. All others must bring data.}{W. Edwards Deming}
+
+#+LATEX: \section{Introduction}
+This is the introduction to Chapter 1.
+Here you can provide an overview of the chapter's content.
+
+#+LATEX: \section{section 2}
+#+LATEX: \subsection{section 2.1}
+This is the first subsection of Section 2.
+
+# #+CAPTION: This is the figure caption. \label{fig:my-figure}
+# #+NAME: fig:my-figure
+# [[file:./Contents/figs/LightSourcesUSA.png]]
+
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.68]{./Contents/figs/LightSourcesUSA.png}
+    \caption{This is the figure caption. \label{fig:LightSources}}
+\end{figure}
+
+#+CAPTION: This is the table caption.
+| Sample | Variable1 | Variable2 | Variable 3 | Variable 4 | %ariable 5 |
+|--------+-----------+-----------+------------+------------+------------|
+|      1 | q         | u         | o          | p          | y          |
+|      2 | q         | u         | o          | p          | y          |
+|      3 | q         | u         | o          | p          | y          |
+|      4 | q         | u         | o          | p          | y          |
+
+
+\begin{table}[h]
+\begin{center}
+\caption{This is a test.}
+\begin{tabular}{ c c c }
+\hline
+A & B & C \\
+\hline
+ cell1 & cell2 & cell3 \\
+ cell4 & cell5 & cell6 \\
+ cell7 & cell8 & cell9
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+#+LATEX: \subsection{Subsection 1.2}
+This is the second subsection of Section 1.
+
+#+LATEX: \section{Section 2}
+#+LATEX: \subsection{Subsection 2.1}
+This is the first subsection of Section 2.
+
+#+LATEX: \subsection{Subsection 2.2}
+This is the second subsection of Section 2.
+
+#+LATEX: \section{Conclusion}
+\index{index!Test}
+This is the conclusion of Chapter 1. Summarize the key points discussed in the chapter.
+

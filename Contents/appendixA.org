@@ -1,0 +1,28 @@
+\chapter{My first appendix}
+
+\section{Introduction}
+This is the introduction to Chapter 2. Here you can provide an overview of the chapter's content.
+
+\section{section 2}
+\subsection{section 2.1}
+This is the first subsection of Section 1.
+
+\subsection{section 2.2}
+This is the second subsection of Section 1.
+
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.68]{./Contents/figs/LightSourcesUSA.png}
+    \caption{This is the figure caption. \label{fig:LightSources}}
+\end{figure}
+
+
+\section{section 3}
+This is the first subsection of Section 2.
+
+\subsection{section 3.2}
+This is the second subsection of Section 2.
+
+\section{Conclusion}
+This is the conclusion of Chapter 1. Summarize the key points discussed in the chapter.
