@@ -25,7 +25,7 @@ Just change the class name in the Preamble drawer and follow the directions belo
 I found that the default book template has too many limitations.
 I found that the svmono class best met my needs. 
 It is the class used by the publisher Springer.
-You must add the *svmono* class to the variable *org-latex-classes* after entering M-x customize.
+You must add the *svmono* class to the variable *org-latex-classes* after entering *M-x customize*.
 See the image below for guidance.
 This step will take five minutes.
 
@@ -56,7 +56,7 @@ You may have to select a subset.
 
 I have ported my favorite LaTeX book template to org-mode because many org users are uncomfortable using pure LaTeX.
 This template depends upon the *svmono.cls*.
-It took me about a day to discover that I had to customize the org-latex-classes variable by adding svmono as a class.
+It took me about a day to discover that I had to customize the *org-latex-classes* variable by adding svmono as a class.
 After I had completed this operation, the PDF would be compiled correctly with narrow margins and indices.
 The image below shows a snapshot of the customization menu.
 The top entry is for one of the default formats, of which there are three: article, book, and report.
@@ -71,7 +71,7 @@ If the chapters are grouped into parts, I may indicate membership of a part by u
 I tend to do this when there are 20 or more chapters.
 
 The images are stored in a figs sub-sub folder.
-The code listings are stored in a subsubfolder named codeListings 
+The code listings are stored in a subsubfolder named *codeListings*. 
 
 The file *0AAAmain.org* is the analog of *main.tex* in LaTeX multiple-part documents.
 This filename appears near the top of the list of files in a directory.
