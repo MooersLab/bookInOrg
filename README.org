@@ -27,19 +27,19 @@ Just change the class name in the Preamble drawer and follow the directions belo
 
 - git clone this repository to your software directory
 - Copy the folder to a new directory (~cp -R~) when you want to start a new writing project.
-- Load the 0AAAmain.org into Emacs and change the title and author and the path to your Bibtex bibliography file.
-- The 0AAAmain.org calls the chapters from the Contents subfolder. Add new chapters to the Contents subfolder and include them via the include command in 0AAAmain.org.
+- Load the *0AAAmain.org* into Emacs and customize. Change the title, author and path to your Bibtex bibliography file.
+- The *0AAAmain.org* calls the chapters from the Contents subfolder. Add new chapters to the Contents subfolder and include them via the include command in 0AAAmain.org.
 - The images are stored in ~./Contents/figs/~.
 - The code listings are stored in ~./Contents/codeListings/~.
 - The appendices are stored in ~./Contents/appendices/~. Each appendix file has the same format as a chapter. They are enumerated by letters instead of numbers.
-- Compile the book by entering ~C-c C-e l o~. It takes org-mode awhile to compile to PDF. You may have to repeat to get the bibliography built.
+- Compile the book by entering ~C-c C-e l o~. It takes a while to compile to PDF in org-mode. You may have to repeat to get the bibliography built.
 
-I use the following bash function to ease starting a new book progect.
+I use the following bash function to make it easy to start a new book project.
 You can store the bash function in your .bashrc or .zshrc file.
 
 I enter ~bookorg <name of book in PascalCase>~.
 The name of the book becomes the folder name.
-I cannot remember if the function name is *orgbook* or *bookorg* so I provide both two versions of the function.
+I cannot remember if the function name is *orgbook* or *bookorg*, so I provided both versions of the function.
 
 #+begin_src bash
 function bookorg {
@@ -76,6 +76,9 @@ cp -R  ~/6112MooersLabGitHubLabRepos/bookInOrg ~/$1
 You probably want to start a writing log for the book project.
 See the writing log repositories at MooersLab.
 
+I create workspaces inside *treemacs*.
+The *treemacs* package gives a side panel buffer showing the book project's files.
+This side panel eases opening files and the creation of new files.
 
 ** Why not use the default book class in org-mode?
 
