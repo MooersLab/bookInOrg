@@ -26,18 +26,24 @@ Just change the class name in the Preamble drawer and follow the directions belo
 ** Quick start
 
 - git clone this repository to your software directory
-- Copy the folder to new directory (~cp -R~) when you want to start a new writing project.
+- Copy the folder to a new directory (~cp -R~) when you want to start a new writing project.
+- Load the 0AAAmain.org into Emacs and change the title and author and the path to your Bibtex bibliography file.
+- The 0AAAmain.org calls the chapters from the Contents subfolder. Add new chapters to the Contents subfolder and include them via the include command in 0AAAmain.org.
+- The images are stored in ~./Contents/figs/~.
+- The code listings are stored in ~./Contents/codeListings/~.
+- The appendices are stored in ~./Contents/appendices/~. Each appendix file has the same format as a chapter. They are enumerated by letters instead of numbers.
+- Compile the book by entering ~C-c C-e l o~. It takes org-mode awhile to compile to PDF. You may have to repeat to get the bibliography built.
 
-I use the following bash function to ease doing so.
+I use the following bash function to ease starting a new book progect.
 You can store the bash function in your .bashrc or .zshrc file.
 
 I enter ~bookorg <name of book in PascalCase>~.
 The name of the book becomes the folder name.
-I cannot remember if the function name is orgbook or bookorg so I provide both two versions of the function.
+I cannot remember if the function name is *orgbook* or *bookorg* so I provide both two versions of the function.
 
 #+begin_src bash
 function bookorg {
-echo "Copy book template directory in org-mode with project number in title."
+echo "Copy book template directory in org-mode with project name as the new folder name."
 if [ $# -lt 1 ]; then
   echo 1>&2 "$0: not enough arguments"
   echo "Usage1: bookorg <ProjectDirectory>"
@@ -52,7 +58,7 @@ cp -R  ~/6112MooersLabGitHubLabRepos/bookInOrg ~/$1
 }
 
 function orgbook {
-echo "Copy book template directory in org-mode with project number in title."
+echo "Copy book template directory in org-mode with project name as the new folder name."
 if [ $# -lt 1 ]; then
   echo 1>&2 "$0: not enough arguments"
   echo "Usage1: orgbook <ProjectDirectory>"
@@ -67,6 +73,8 @@ cp -R  ~/6112MooersLabGitHubLabRepos/bookInOrg ~/$1
 }
 #+end_src
 
+You probably want to start a writing log for the book project.
+See the writing log repositories at MooersLab.
 
 
 ** Why not use the default book class in org-mode?
@@ -137,7 +145,7 @@ You also do not want to inadvertently copy or paste anything into this area.
 |Version |Changes                                                                                               |Date                  |
 |--------+------------------------------------------------------------------------------------------------------+----------------------|
 |   0.1  | Initiate project. Added badges, funding, and update table.                                           | 2024 September 29    |
-
+|   0.1.1  | Added installation instructions.                                                                   | 2024 September 30    |
 
 ** Sources of funding
 
