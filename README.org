@@ -35,7 +35,7 @@ I enter ~bookorg <name of book in PascalCase>~.
 The name of the book becomes the folder name.
 I cannot remember if the function name is orgbook or bookorg so I provide both two versions of the function.
 
-#+SRC_BEGIN bash
+#+begin_src bash
 function bookorg {
 echo "Copy book template directory in org-mode with project number in title."
 if [ $# -lt 1 ]; then
@@ -65,7 +65,7 @@ fi
 projectID="$1"
 cp -R  ~/6112MooersLabGitHubLabRepos/bookInOrg ~/$1
 }
-#+SRC_END
+#+end_src
 
 
 
