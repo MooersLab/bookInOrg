@@ -1,0 +1,204 @@
+#+TITLE: Scientific Computing on Mac OSX
+#+AUTHOR: Blaine Mooers
+#+DATE: 2024-09-28
+#+Options: data:nil toc:nil \n:nil num:nil
+#+STARTUP: overview
+#+STARTUP: noindent
+#+cite_export: natbib cell
+#+bibliography: ~/Documents/global.bib
+:PREAMBLE:
+#+LATEX_CLASS: svmono
+#+LATEX_CLASS_OPTIONS: [openany,envcountsame,envcountchap]
+#+LATEX_HEADER: \usepackage[utf8]{inputenc}
+#+LATEX_HEADER: \usepackage{rotating}
+#+LATEX_HEADER: \usepackage{appendix}
+#+LATEX_HEADER: \usepackage[letterpaper, total={7in, 9in}]{geometry}
+#+LATEX_HEADER: \usepackage[english]{babel}
+#+LATEX_HEADER: \usepackage{minted}
+#+LATEX_HEADER: \usepackage{caption}
+#+LATEX_HEADER: \usepackage[caption=false]{subfig}
+#+LATEX_HEADER: \usepackage{mdframed}
+#+LATEX_HEADER: \usepackage{textcomp}
+#+LATEX_HEADER: \usepackage{gensymb}
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \usepackage{amssymb}
+#+LATEX_HEADER: \usepackage{physics}
+#+LATEX_HEADER: \usepackage{dsfont}
+#+LATEX_HEADER: \usepackage{mathrsfs}
+#+LATEX_HEADER: \usepackage{wasysym}
+#+LATEX_HEADER: \usepackage{verbatim}
+#+LATEX_HEADER: \newenvironment{code}{\captionsetup{type=listing}}{}
+#+LATEX_HEADER: \usepackage[parfill]{parskip}
+#+LATEX_HEADER: \usepackage{makeidx}
+#+LATEX_HEADER: \usepackage[plainpages=false]{hyperref}
+#+LATEX_HEADER: \usepackage{multicol}
+#+LATEX_HEADER: \usepackage[bottom]{footmisc}
+#+LATEX_HEADER: \RequirePackage{authorindex}
+#+LATEX_HEADER: \def\theaipage{\string\hyperpage{\thepage}}
+#+LATEX_HEADER: \newcommand{\listofauthorsname}{List of Authors}%
+#+LATEX_HEADER: \newcommand{\listofauthors}{%
+#+LATEX_HEADER: \chapter*{\listofauthorsname}%
+#+LATEX_HEADER: \phantomsection%
+#+LATEX_HEADER: \addcontentsline{toc}{chapter}{\listofauthorsname}%
+#+LATEX_HEADER: \noindent%
+#+LATEX_HEADER: \printauthorindex%
+#+LATEX_HEADER: %\end{multicols*}
+#+LATEX_HEADER: }% Please include this closing brace
+#+LATEX_HEADER: \newfloat{checklist}{H}{checklist}[chapter]
+#+LATEX_HEADER: \floatname{checklist}{Checklist}
+#+LATEX_HEADER: \chapter*{\liststatmodelname}\@starttoc{sm}
+#+LATEX_HEADER: \clearpage%      to get on the right page
+#+LATEX_HEADER: \phantomsection% probably necessary only if using hyperref package
+#+LATEX_HEADER: \addcontentsline{toc}{chapter}{\liststatmodelname}% to add to table of contents
+#+LATEX_HEADER: \noindent%
+#+LATEX_HEADER: }%
+#+LATEX_HEADER: \makeatother
+#+LATEX_HEADER: \makeindex
+#+LATEX_HEADER: \usepackage[cc]{titlepic}
+#+LATEX_HEADER: \usepackage{graphicx}
+#+LATEX_HEADER: \usepackage{urlx} 
+#+LATEX_HEADER: \usepackage{epigraph,varwidth}
+#+LATEX_HEADER: \usepackage{epipart}
+#+LATEX_HEADER: \renewcommand{\epigraphsize}{\small}
+#+LATEX_HEADER: \setlength{\epigraphwidth}{0.6\textwidth}
+#+LATEX_HEADER: \renewcommand{\textflush}{flushright}
+#+LATEX_HEADER: \renewcommand{\sourceflush}{flushright}
+#+LATEX_HEADER: \newcommand{\epitextfont}{\itshape}
+#+LATEX_HEADER: \newcommand{\episourcefont}{\scshape}
+#+LATEX_HEADER: \makeatletter
+#+LATEX_HEADER: \newsavebox{\epi@textbox}
+#+LATEX_HEADER: \newsavebox{\epi@sourcebox}
+#+LATEX_HEADER: \newlength\epi@finalwidth
+#+LATEX_HEADER: \renewcommand{\epigraph}[2]{%
+#+LATEX_HEADER:   \vspace{\beforeepigraphskip}
+#+LATEX_HEADER:   {\epigraphsize\begin{\epigraphflush}
+#+LATEX_HEADER:    \epi@finalwidth=\z@
+#+LATEX_HEADER:    \sbox\epi@textbox{%
+#+LATEX_HEADER:      \varwidth{\epigraphwidth}
+#+LATEX_HEADER:      \begin{\textflush}\epitextfont#1\end{\textflush}
+#+LATEX_HEADER:      \endvarwidth
+#+LATEX_HEADER:    }%
+#+LATEX_HEADER:    \epi@finalwidth=\wd\epi@textbox
+#+LATEX_HEADER:    \sbox\epi@sourcebox{%
+#+LATEX_HEADER:      \varwidth{\epigraphwidth}
+#+LATEX_HEADER:      \begin{\sourceflush}\episourcefont#2\end{\sourceflush}%
+#+LATEX_HEADER:      \endvarwidth
+#+LATEX_HEADER:    }%
+#+LATEX_HEADER:    \ifdim\wd\epi@sourcebox>\epi@finalwidth
+#+LATEX_HEADER:      \epi@finalwidth=\wd\epi@sourcebox
+#+LATEX_HEADER:    \fi
+#+LATEX_HEADER:    \leavevmode\vbox{
+#+LATEX_HEADER:      \hb@xt@\epi@finalwidth{\hfil\box\epi@textbox}
+#+LATEX_HEADER:      \vskip1.75ex
+#+LATEX_HEADER:      \hrule height \epigraphrule
+#+LATEX_HEADER:      \vskip.75ex
+#+LATEX_HEADER:      \hb@xt@\epi@finalwidth{\hfil\box\epi@sourcebox}
+#+LATEX_HEADER:    }%
+#+LATEX_HEADER:    \end{\epigraphflush}
+#+LATEX_HEADER:    \vspace{\afterepigraphskip}}}
+#+LATEX_HEADER: \makeatother
+#+LATEX_HEADER: \usepackage{array}
+#+LATEX_HEADER: \usepackage{booktabs}
+#+LATEX_HEADER: \usepackage[bottom]{footmisc}
+#+LATEX_HEADER: \usepackage[normalem]{ulem}
+#+LATEX_HEADER: \usepackage{scrextend}
+#+LATEX_HEADER: \usepackage[utf8]{inputenc}
+#+LATEX_HEADER: \definecolor{codegreen}{rgb}{0,0.6,0}
+#+LATEX_HEADER: \definecolor{codegray}{rgb}{0.5,0.5,0.5}
+#+LATEX_HEADER: \definecolor{codepurple}{rgb}{0.58,0,0.82}
+#+LATEX_HEADER: \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+#+LATEX_HEADER: \usepackage{float}
+#+LATEX_HEADER: \floatstyle{plain}
+#+LATEX_HEADER: \usepackage{filecontents}
+#+LATEX_HEADER: \addtokomafont{labelinglabel}{\sffamily\bfseries}
+#+LATEX_HEADER: \usepackage{morewrites}
+#+LATEX_HEADER: \usepackage{siunitx}
+#+LATEX_HEADER: \hypersetup{
+#+LATEX_HEADER:     colorlinks=true,
+#+LATEX_HEADER:     linkcolor=blue,
+#+LATEX_HEADER:     filecolor=magenta,
+#+LATEX_HEADER:     urlcolor=cyan,
+#+LATEX_HEADER: }
+#+LATEX_HEADER: \usepackage{url}
+#+LATEX_HEADER: \urlstyle{sf}
+#+LATEX_HEADER: \usepackage{underscore}
+#+LATEX_HEADER: \usepackage[acronym,toc,smallcaps]{glossaries}
+#+LATEX_HEADER: \setlength{\glsdescwidth}{15cm}
+#+LATEX_HEADER: \loadglsentries[\acronymtype]{\jobname-globalAcronyms}
+#+LATEX_HEADER: \loadglsentries{\jobname-globalGlossary}
+#+LATEX_HEADER: \newglossarystyle{symbunitlong}{%
+#+LATEX_HEADER: \setglossarystyle{long3col}% base this style on the list style
+#+LATEX_HEADER: \renewenvironment{theglossary}{% Change the table type --> 3 columns
+#+LATEX_HEADER: \begin{longtable}{lp{0.6\glsdescwidth}>{\centering\arraybackslash}p{2cm}}}%
+#+LATEX_HEADER: {\end{longtable}}%
+#+LATEX_HEADER: \renewcommand*{\glossaryheader}{%  Change the table header
+#+LATEX_HEADER: \bfseries Sign & \bfseries Description & \bfseries Unit \\
+#+LATEX_HEADER: \hline
+#+LATEX_HEADER: \endhead}
+#+LATEX_HEADER: \renewcommand*{\glossentry}[2]{%  Change the displayed items
+#+LATEX_HEADER: \glstarget{##1}{\glossentryname{##1}} %
+#+LATEX_HEADER: & \glossentrydesc{##1}% Description
+#+LATEX_HEADER: & \glsunit{##1}  \tabularnewline
+#+LATEX_HEADER: }
+#+LATEX_HEADER: }
+#+LATEX_HEADER: %\makeglossaries
+#+LATEX_HEADER: \usepackage{sectsty}
+#+LATEX_HEADER: \chapterfont{\color{Maroon}}
+#+LATEX_HEADER: \usepackage{listings}
+#+LATEX_HEADER: \usepackage{minted,xcolor,chngcntr}
+#+LATEX_HEADER: \usemintedstyle{default}
+#+LATEX_HEADER: \definecolor{codebg1}{rgb}{0.96,0.96,0.96}
+#+LATEX_HEADER: \definecolor{codebg2}{rgb}{0.98,0.98,0.98}
+#+LATEX_HEADER: \newminted{python}{bgcolor=codebg1,
+#+LATEX_HEADER:                     linenos=true,
+#+LATEX_HEADER:                     frame=lines,
+#+LATEX_HEADER:                     numbersep=5pt,
+#+LATEX_HEADER:                     fontsize=\footnotesize}
+#+LATEX_HEADER: \newminted{bash}{bgcolor=codebg2,
+#+LATEX_HEADER:                     linenos=true,
+#+LATEX_HEADER:                     frame=lines,
+#+LATEX_HEADER:                     numbersep=5pt,
+#+LATEX_HEADER:                     fontsize=\footnotesize}
+#+LATEX_HEADER: \counterwithin{listing}{section}
+#+LATEX_HEADER: \DeclareCaptionType{equ}[][]
+#+LATEX_HEADER: \RequirePackage{unicode-math} % add after loading math font packages such as amssymb, dsfont, mathrsfs and wasysym
+:END:
+
+\newpage
+\frontmatter
+\preface
+# Must use org-mode command to include documents.
+#+INCLUDE: "./Contents/Preface.org"
+
+\listoffigures
+\listoftables
+\listoflistings
+
+#+LATEX: \setcounter{chapter}{0}
+\mainmatter
+#+INCLUDE: "./Contents/chapter1.org"
+#+INCLUDE: "./Contents/chapter2.org"
+
+
+\part*{Appendices}
+\appendix
+#+INCLUDE: "./Contents/appendixA.org"
+#+INCLUDE: "./Contents/appendixB.org"
+#+INCLUDE: "./Contents/appendixC.org"
+
+\backmatter
+
+#+print_bibliography:
+
+** Bibliography guidance                                           :noexport:
+:GUIDANCE:
+Use one of these commands to insert a cite key at the cursor.
+
+C-c b inserts citations via citar. Your init.el must be configured for citar and friends.
+
+C-c C-x @ inserts citations via org-cite. Org-cite in built in.
+:END:
+
+\listofauthors
+
+\printindex
