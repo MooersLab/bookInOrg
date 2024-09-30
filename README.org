@@ -23,6 +23,52 @@ It will probably take a lot of pressure from below to get them to add support fo
 Part of the problem is that few librarians know how to use LaTeX let alone org-mode.
 Just change the class name in the Preamble drawer and follow the directions below to add a new class to the list of available classes in the variable ~org-latex-classes~.
 
+** Quick start
+
+- git clone this repository to your software directory
+- Copy the folder to new directory (~cp -R~) when you want to start a new writing project.
+
+I use the following bash function to ease doing so.
+You can store the bash function in your .bashrc or .zshrc file.
+
+I enter ~bookorg <name of book in PascalCase>~.
+The name of the book becomes the folder name.
+I cannot remember if the function name is orgbook or bookorg so I provide both two versions of the function.
+
+#+SRC_BEGIN bash
+function bookorg {
+echo "Copy book template directory in org-mode with project number in title."
+if [ $# -lt 1 ]; then
+  echo 1>&2 "$0: not enough arguments"
+  echo "Usage1: bookorg <ProjectDirectory>"
+  return 2
+elif [ $# -gt 1 ]; then
+  echo 1>&2 "$0: too many arguments"
+  echo "Usage1: bookorg <ProjectDirectory>"
+  return 2
+fi
+projectID="$1"
+cp -R  ~/6112MooersLabGitHubLabRepos/bookInOrg ~/$1
+}
+
+function orgbook {
+echo "Copy book template directory in org-mode with project number in title."
+if [ $# -lt 1 ]; then
+  echo 1>&2 "$0: not enough arguments"
+  echo "Usage1: orgbook <ProjectDirectory>"
+  return 2
+elif [ $# -gt 1 ]; then
+  echo 1>&2 "$0: too many arguments"
+  echo "Usage1: orgbook <ProjectDirectory>"
+  return 2
+fi
+projectID="$1"
+cp -R  ~/6112MooersLabGitHubLabRepos/bookInOrg ~/$1
+}
+#+SRC_END
+
+
+
 ** Why not use the default book class in org-mode?
 
 I found that the default book template has too many limitations.
