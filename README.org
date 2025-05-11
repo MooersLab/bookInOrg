@@ -1,5 +1,5 @@
-[[License: MIT][https://img.shields.io/badge/License-MIT-blue.svg]]
-![Version](https://img.shields.io/static/v1?label=bookInOrg&message=0.0&color=brightcolor)
+![Version](https://img.shields.io/static/v1?label=bookInOrg&message=0.0&color=brightcolor)[[License: MIT][https://img.shields.io/badge/License-MIT-blue.svg]]
+
 
 * Book template in org-mode that uses the svmono class
 
