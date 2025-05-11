@@ -183,7 +183,7 @@ This is particularly useful if there has been a long break in using org-mode.
 |----------+----------------------------------------------------------------------------------------------------+----------------------|
 |   0.1    | Initiate project. Added badges, funding, and this update table.                                    | 2024 September 29    |
 |   0.1.1  | Added installation instructions.                                                                   | 2024 September 30    |
-|   0.1.2  | Minor edits to the README.md file.  Add paragrph                                                   | 2025 May 11          |
+|   0.1.2  | Minor edits to the README.md file.  Add several explanatory paragraphs.                             | 2025 May 11          |
 
 ** Sources of funding
 
