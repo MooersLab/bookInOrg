@@ -214,7 +214,7 @@ It ensures complete and accurate customization of the template.
 
 function pbook${1:2104} () {
     echo "Pushes to BlaineMooersLab on GitHub."
-    cd ~/${1}${2:emacs}/ov
+    cd ~/${1}${2:----}
     git pull
     cd
     cd ~/6114BlaineMooersLabGitHubRepos/${1}${2}/Contents
