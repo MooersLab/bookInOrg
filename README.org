@@ -31,7 +31,7 @@ Tables in org-mode are like mini Excel spreadsheets.
 
 Another key feature of Org-Mode is its support for literate programming.
 You can turn your code blocks into executable code that generates plots.
-This is useful in projects where there is a need to update tables and figures as new data is collected.
+This is useful in projects where there is a need to update tables and figures as new data are collected.
 This is particularly useful for graduate students who are wise enough to start assembling their dissertation while still collecting the data.
 
 Many Org-mode users are uncomfortable using LaTeX because they have not taken the time to master LaTeX.
@@ -55,12 +55,14 @@ Org-mode provides a means of hiding LaTeX from users who are intimidated by it.
 ** Quick start
 - Clone this repository to your software directory.
 - Copy the folder to a new directory (~cp -R~) when you want to start a new writing project.
+- The writing project has the *main.org* at the top level. It imports the chapters.org files from the *Contents* subfolder.
+- The chapters import image files from the ~./Contents/figs~ subfolder.
 - Load the *main.org* into Emacs and customize. Change the title, author, and path to your Bibtex bibliography file.
 - The *main.org* calls the chapters from the Contents subfolder. Add new chapters to the Contents subfolder and include them via the include command in *main.org*.
 - The images are stored in ~./Contents/figs/~.
-- The code listings are stored in ~./Contents/codeListings/~.
+- The code listings are stored in ~./Contents/codeListings/~. You can paste code into a lstlisting code block rather than import the code with an include statement.
 - Each appendix file has the same format as a chapter. They are enumerated by letters instead of numbers.
-- Compile the book by entering ~C-c C-e l o~. It takes several seconds to compile to PDF in org-mode. You may have to repeat to get the bibliography built.
+- Compile the book by entering ~C-c C-e l o~. It takes several seconds to compile to PDF in org-mode. You may need to repeat to build the bibliography the first time.
 
 
 ** Emacs init.el configuration
@@ -121,9 +123,12 @@ These functions make creating index keys enjoyable!
 
 You can use LaTeX citekeys in org-mode.
 In such a case, it is possible to automate the generation of author keys using the authorindex package.
-You will need to map the cite macro to the aicite macro to automate the process.
-Unfortunately, this package does not work with citar or org-cite style citekeys.
+Every time you enter a new citekey, the author index will be updated.
+This is a very nice approach.
+You will need to map the \cite macro to the \aicite macro to automate the process.
+Unfortunately, the authorindex package does not work with citar or org-cite style citekeys.
 This is the first limitation I have encountered while using Org-Mode to create a book.
+Comment out the author index in the main.org file if you do not want it generated.
 
 ** Bash function to ease starting a book project
 
