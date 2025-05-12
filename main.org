@@ -35,7 +35,7 @@
 #+LATEX_HEADER: \usepackage{imakeidx}
 #+LATEX_HEADER: \usepackage[luatex,plainpages=false]{hyperref}
 #+LATEX_HEADER: \hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue, pdfborder={0 0 0}}
-#+LATEX_HEADER: \makeindex[name=main,title=Main Index,columns=2]
+#+LATEX_HEADER: \makeindex[name=main,title=Subject Index,columns=2]
 #+LATEX_HEADER: \makeindex[name=authors,title=Author Index,columns=2]
 
 # make glossary and acronym list
@@ -162,6 +162,7 @@ C-c b inserts citations via citar. Your init.el must be configured for citar and
 C-c C-x @ inserts citations via org-cite. Org-cite in built in.
 :END:
 
+** Indices and Glossaries
 
 #+LATEX: \printindex[main]
 #+LATEX: \printindex[authors]
