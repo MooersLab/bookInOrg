@@ -248,7 +248,9 @@ function plog${1} () {
 }
 #+end_src
 
-
+To check the code of the bash function on the fly in the terminal, enter 'which pbook2104'.
+The active code will be printed to the terminal.
+This is useful for checking that the updated function was correctly sourced and is available.
 
 ** Why not use the default book class in org-mode?
 
