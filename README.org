@@ -214,15 +214,16 @@ It ensures complete and accurate customization of the template.
 
 function pbook${1:2104} () {
     echo "Pushes to BlaineMooersLab on GitHub."
-    cd ~/${1}${2:----}
-    git pull
-    cd
-    cd ~/6114BlaineMooersLabGitHubRepos/${1}${2}/Contents
+    
+    cd ~/6114BlaineMooersLabGitHubRepos/${1}${2}
+    cp  ~/${1}${2}/main.og .
+    cd ./Contents
     cp ~/${1}${2}/Contents/*.org .
     cp ~/${1}${2}/Contents/figs/*.* ./figs/.
     cd ..
     comment="${3:-Updated}"
-    gac Contents/ "$comment"
+    gac ./Contents/ "$comment"
+    gac main.org "$comment"
     git push
     echo "Pushed book ${1}${2}."
     cd ~/
