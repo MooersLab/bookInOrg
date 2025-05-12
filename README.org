@@ -169,9 +169,71 @@ cp -R  ~/6112MooersLabGitHubLabRepos/bookInOrg ~/$1
 You should start a writing log for the book project.
 Visit the writing log repositories at MooersLab on GitHub.
 
+** Use treemacs to ease working with multiple files
+
 I create workspaces inside *treemacs*.
 The *treemacs* package provides a side panel buffer that displays the book project's files.
 This side panel eases the opening and creation of new files.
+
+** Keep book project under version control
+
+I use what I call `push functions` to ease committing updates to documents.
+I store each writing project in a dedicated GitHub repo.
+I copy the updated files to a separate folder that contains all of the local copies of my GitHub repos.
+I then push the changes.
+The push function handles all of these steps by entering the function name.
+A commit message is an optional argument.
+
+The code listing below is a yasnippet for creating two push functions: one for the book and one for the log file.
+The '----' represents the name of the writing project.
+The number is a four-digit project number stored in a project database file.
+The number and name make up the project folder name in my home directory.
+The snippet accelerates the creation of the push functions with three mirrored tab stops.
+It ensures complete and accurate customization of the template.
+
+
+#+begin_src bash
+# -*- mode: snippet -*-
+# name: push-book-writing-project
+# key: pbook
+# --
+
+function pbook${1:2104} () {
+    echo "Pulls from Overleaf and copies to BlaineMooersLab on GitHub."
+    cd ~/2104emacs/ov
+    git pull
+    cd     
+    cd ~/6114BlaineMooersLabGitHubRepos/${1}${2:----}/Content
+    cp ~/${1}${2}/Content/*.org .
+    cp ~/${1}${2}/Content/figs/*.* ./Figures/.
+    cd ..
+    comment="${3:-Updated}"  
+    gac ./Content "$comment"  
+    git push  
+    echo "Pushed book ${1}${2}."  
+    cd ~/
+    pwd   
+}
+
+function plog${1} () {
+    cd ~/6114BlaineMooersLabGitHubRepos/${1}${2}/Content/writingLog
+    if [ -f /Users/blaine/2104${2}/ov/writingLog/log${1}.org ]; then
+        cp /Users/blaine/2104${2}/ov/writingLog/log${1}.org .
+        file_to_commit="log${1}.org"
+    else  
+        cp /Users/blaine/${1}${2}/ov/writingLog/${1}.tex .
+        file_to_commit="log${1}.tex"
+    fi
+    comment="${3:-Updated}"
+    gac "$file_to_commit" "$comment"      
+    git push
+    echo "Pushed the log file for project ${1}${2:----}." 
+    cd ~/
+    pwd
+}
+#+end_src
+
+
 
 ** Why not use the default book class in org-mode?
 
@@ -251,6 +313,8 @@ They will reveal key bindings and commands you can utilize to work with a partic
 For example, there is a drawer explaining how to insert citations under the heading for the bibliography.
 It explains how to utilize the citar package or the built-in org-cite package.
 This is particularly useful if there has been a long break in using org-mode.
+
+
 
 
 ** Update table
