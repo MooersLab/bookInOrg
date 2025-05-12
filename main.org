@@ -1,0 +1,169 @@
+#+TITLE: Scientific Computing on Mac OSX
+#+AUTHOR: Blaine Mooers
+#+DATE: 2025-05-11
+#+Options: data:nil toc:nil \n:nil num:nil
+#+STARTUP: overview
+#+STARTUP: noindent
+#+cite_export: natbib cell
+#+bibliography: ~/Documents/global.bib
+:PREAMBLE:
+#+LATEX_CLASS: svmono
+#+LATEX_CLASS_OPTIONS: [openany,envcountsame,envcountchap]
+#+LATEX_HEADER: \usepackage[utf8]{inputenc}
+#+LATEX_HEADER: \usepackage{rotating}
+#+LATEX_HEADER: \usepackage{datetime}
+#+LATEX_HEADER: \usepackage{appendix}
+#+LATEX_HEADER: \usepackage[letterpaper, total={7in, 9in}]{geometry}
+#+LATEX_HEADER: \usepackage[english]{babel}
+#+LATEX_HEADER: \usepackage{minted}
+#+LATEX_HEADER: \usepackage{listings}
+#+LATEX_HEADER: \usepackage{caption}
+#+LATEX_HEADER: \usepackage[caption=false]{subfig}
+#+LATEX_HEADER: \usepackage{mdframed}
+#+LATEX_HEADER: \usepackage{textcomp}
+#+LATEX_HEADER: \usepackage{gensymb}
+#+LATEX_HEADER: \usepackage{amsmath}
+#+LATEX_HEADER: \usepackage{amssymb}
+#+LATEX_HEADER: \usepackage{physics}
+#+LATEX_HEADER: \usepackage{dsfont}
+#+LATEX_HEADER: \usepackage{mathrsfs}
+#+LATEX_HEADER: \usepackage{wasysym}
+#+LATEX_HEADER: \usepackage{verbatim}
+#+LATEX_HEADER: \usepackage[parfill]{parskip}
+
+# make index and author index
+#+LATEX_HEADER: \usepackage{imakeidx}
+#+LATEX_HEADER: \usepackage[luatex,plainpages=false]{hyperref}
+#+LATEX_HEADER: \hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue, pdfborder={0 0 0}}
+#+LATEX_HEADER: \makeindex[name=main,title=Main Index,columns=2]
+#+LATEX_HEADER: \makeindex[name=authors,title=Author Index,columns=2]
+
+# make glossary and acronym list
+#+LATEX_HEADER: \usepackage{morewrites} % required when opening more than 16 files
+#+LATEX_HEADER: \usepackage[acronym,toc]{glossaries}
+#+LATEX_HEADER: \loadglsentries[type=acronym]{\jobname-acronyms.tex}
+#+LATEX_HEADER: \loadglsentries{\jobname-glossary.tex}
+#+LATEX_HEADER: \makeglossaries
+#+LATEX_HEADER: \glsaddall
+
+# checklists
+#+LATEX_HEADER: \newfloat{checklist}{H}{checklist}[chapter]
+#+LATEX_HEADER: \floatname{checklist}{Checklist}
+#+LATEX_HEADER: \makeatother
+
+
+#+LATEX_HEADER: \usepackage[cc]{titlepic}
+#+LATEX_HEADER: \usepackage{graphicx}
+
+#+LATEX_HEADER: \usepackage{epigraph,varwidth}
+#+LATEX_HEADER: \usepackage{epipart}
+#+LATEX_HEADER: \renewcommand{\epigraphsize}{\small}
+#+LATEX_HEADER: \setlength{\epigraphwidth}{0.6\textwidth}
+#+LATEX_HEADER: \renewcommand{\textflush}{flushright}
+#+LATEX_HEADER: \renewcommand{\sourceflush}{flushright}
+#+LATEX_HEADER: \newcommand{\epitextfont}{\itshape}
+#+LATEX_HEADER: \newcommand{\episourcefont}{\scshape}
+#+LATEX_HEADER: \makeatletter
+#+LATEX_HEADER: \newsavebox{\epi@textbox}
+#+LATEX_HEADER: \newsavebox{\epi@sourcebox}
+#+LATEX_HEADER: \newlength\epi@finalwidth
+#+LATEX_HEADER: \renewcommand{\epigraph}[2]{%
+#+LATEX_HEADER:   \vspace{\beforeepigraphskip}
+#+LATEX_HEADER:   {\epigraphsize\begin{\epigraphflush}
+#+LATEX_HEADER:    \epi@finalwidth=\z@
+#+LATEX_HEADER:    \sbox\epi@textbox{%
+#+LATEX_HEADER:      \varwidth{\epigraphwidth}
+#+LATEX_HEADER:      \begin{\textflush}\epitextfont#1\end{\textflush}
+#+LATEX_HEADER:      \endvarwidth
+#+LATEX_HEADER:    }%
+#+LATEX_HEADER:    \epi@finalwidth=\wd\epi@textbox
+#+LATEX_HEADER:    \sbox\epi@sourcebox{%
+#+LATEX_HEADER:      \varwidth{\epigraphwidth}
+#+LATEX_HEADER:      \begin{\sourceflush}\episourcefont#2\end{\sourceflush}%
+#+LATEX_HEADER:      \endvarwidth
+#+LATEX_HEADER:    }%
+#+LATEX_HEADER:    \ifdim\wd\epi@sourcebox>\epi@finalwidth
+#+LATEX_HEADER:      \epi@finalwidth=\wd\epi@sourcebox
+#+LATEX_HEADER:    \fi
+#+LATEX_HEADER:    \leavevmode\vbox{
+#+LATEX_HEADER:      \hb@xt@\epi@finalwidth{\hfil\box\epi@textbox}
+#+LATEX_HEADER:      \vskip1.75ex
+#+LATEX_HEADER:      \hrule height \epigraphrule
+#+LATEX_HEADER:      \vskip.75ex
+#+LATEX_HEADER:      \hb@xt@\epi@finalwidth{\hfil\box\epi@sourcebox}
+#+LATEX_HEADER:    }%
+#+LATEX_HEADER:    \end{\epigraphflush}
+#+LATEX_HEADER:    \vspace{\afterepigraphskip}}}
+#+LATEX_HEADER: \makeatother
+
+
+#+LATEX_HEADER: \usepackage{booktabs}
+
+
+# Configure the listings package
+#+LATEX_HEADER: \renewcommand{\lstlistingname}{Listing}
+#+LATEX_HEADER: \renewcommand{\lstlistlistingname}{List of Listings}
+# Style the listings
+#+LATEX_HEADER: \lstset{
+#+LATEX_HEADER:   basicstyle=\ttfamily\small,
+#+LATEX_HEADER:   frame=single,
+#+LATEX_HEADER:   breaklines=true,
+#+LATEX_HEADER:   numbers=left,
+#+LATEX_HEADER:   numberstyle=\tiny,
+#+LATEX_HEADER:   captionpos=b
+#+LATEX_HEADER: }
+
+#+LATEX_HEADER: \usepackage{xcolor}
+#+LATEX_HEADER: \lstset{
+#+LATEX_HEADER:   language=Python,
+#+LATEX_HEADER:   keywordstyle=\color{blue},
+#+LATEX_HEADER:   commentstyle=\color{green!60!black},
+#+LATEX_HEADER:   stringstyle=\color{red}
+#+LATEX_HEADER: }
+:END:
+
+
+#+LATEX_HEADER: \date{\today}
+#+Latex: \newpage
+#+LATEX: \frontmatter
+#+LATEX: \preface
+
+# Must use org-mode command to include documents.
+#+INCLUDE: "./Contents/Preface.org"
+#+LATEX: \tableofcontents
+#+LATEX: \printglossary[type=acronym,title=List of Acronyms]
+#+LATEX: \listoffigures
+#+LATEX: \listoftables
+#+LATEX: \lstlistoflistings
+
+
+#+LATEX: \setcounter{chapter}{0}
+\mainmatter
+#+INCLUDE: "./Contents/chapter1.org"
+#+INCLUDE: "./Contents/chapter2.org"
+
+
+\part*{Appendices}
+\appendix
+#+INCLUDE: "./Contents/appendixA.org"
+#+INCLUDE: "./Contents/appendixB.org"
+#+INCLUDE: "./Contents/appendixC.org"
+
+\backmatter
+
+#+print_bibliography:
+
+** Bibliography guidance                                           :noexport:
+:GUIDANCE:
+Use one of these commands to insert a cite key at the cursor.
+
+C-c b inserts citations via citar. Your init.el must be configured for citar and friends.
+
+C-c C-x @ inserts citations via org-cite. Org-cite in built in.
+:END:
+
+
+#+LATEX: \printindex[main]
+#+LATEX: \printindex[authors]
+#+LATEX: \printglossary[type=main,title=Glossary]
+
