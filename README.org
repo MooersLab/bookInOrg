@@ -189,6 +189,16 @@ I then push the changes.
 The push function handles all of these steps by entering the function name.
 A commit message is an optional argument.
 
+- Select a push function name  in the form of  pbook----, where the dashes are for the project number.
+- Edit the table of push functions in .bashPushAliases by adding the push function name.
+- There is a template push function snippet under the fundamental mode,
+- Make the push function in the section below and edit the file paths.
+- Create the subfolder in 6114BlaineMooersLabRepos for the repo files.
+- Create a repo on github/BlaineMooesLab.
+- Make the first commit to the repo.
+- Create separate push functions for the writing project and for the log file but keep both in the same repo.
+- Invoke by entering function pbook---- or plog----.
+
 The code listing below is a yasnippet for creating two push functions: one for the book and one for the log file.
 The '----' represents the name of the writing project.
 The number is a four-digit project number stored in a project database file.
@@ -198,41 +208,40 @@ It ensures complete and accurate customization of the template.
 
 
 #+begin_src bash
-# -*- mode: snippet -*-
 # name: push-book-writing-project
 # key: pbook
 # --
 
 function pbook${1:2104} () {
-    echo "Pulls from Overleaf and copies to BlaineMooersLab on GitHub."
-    cd ~/2104emacs/ov
+    echo "Pushes to BlaineMooersLab on GitHub."
+    cd ~/${1}${2:emacs}/ov
     git pull
-    cd     
-    cd ~/6114BlaineMooersLabGitHubRepos/${1}${2:----}/Content
-    cp ~/${1}${2}/Content/*.org .
-    cp ~/${1}${2}/Content/figs/*.* ./Figures/.
+    cd
+    cd ~/6114BlaineMooersLabGitHubRepos/${1}${2}/Contents
+    cp ~/${1}${2}/Contents/*.org .
+    cp ~/${1}${2}/Contents/figs/*.* ./figs/.
     cd ..
-    comment="${3:-Updated}"  
-    gac ./Content "$comment"  
-    git push  
-    echo "Pushed book ${1}${2}."  
+    comment="${3:-Updated}"
+    gac Contents/ "$comment"
+    git push
+    echo "Pushed book ${1}${2}."
     cd ~/
-    pwd   
+    pwd
 }
 
 function plog${1} () {
-    cd ~/6114BlaineMooersLabGitHubRepos/${1}${2}/Content/writingLog
-    if [ -f /Users/blaine/2104${2}/ov/writingLog/log${1}.org ]; then
-        cp /Users/blaine/2104${2}/ov/writingLog/log${1}.org .
+    cd ~/6114BlaineMooersLabGitHubRepos/${1}${2}
+    if [ -f /Users/blaine/${1}${2}/log${1}.org ]; then
+        cp /Users/blaine/${1}${2}/log${1}.org .
         file_to_commit="log${1}.org"
-    else  
-        cp /Users/blaine/${1}${2}/ov/writingLog/${1}.tex .
+    else
+        cp /Users/blaine/${1}${2}/${1}.tex .
         file_to_commit="log${1}.tex"
     fi
     comment="${3:-Updated}"
-    gac "$file_to_commit" "$comment"      
+    gac "$file_to_commit" "$comment"
     git push
-    echo "Pushed the log file for project ${1}${2:----}." 
+    echo "Pushed the log file for project ${1}${2}."
     cd ~/
     pwd
 }
@@ -318,8 +327,6 @@ They will reveal key bindings and commands you can utilize to work with a partic
 For example, there is a drawer explaining how to insert citations under the heading for the bibliography.
 It explains how to utilize the citar package or the built-in org-cite package.
 This is particularly useful if there has been a long break in using org-mode.
-
-
 
 
 ** Update table
