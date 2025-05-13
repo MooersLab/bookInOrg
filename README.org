@@ -216,7 +216,7 @@ function pbook${1:2104} () {
     echo "Pushes to BlaineMooersLab on GitHub."
     
     cd ~/6114BlaineMooersLabGitHubRepos/${1}${2}
-    cp  ~/${1}${2}/main.og .
+    cp  ~/${1}${2}/main.org .
     cd ./Contents
     cp ~/${1}${2}/Contents/*.org .
     cp ~/${1}${2}/Contents/figs/*.* ./figs/.
