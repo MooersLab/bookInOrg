@@ -37,6 +37,8 @@
 #+LATEX_HEADER: \hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue, pdfborder={0 0 0}}
 #+LATEX_HEADER: \makeindex[name=main,title=Subject Index,columns=2]
 #+LATEX_HEADER: \makeindex[name=authors,title=Author Index,columns=2]
+#+LATEX_HEADER: \makeindex[name=prompt,title=Writing Prompt Index,columns=1]
+
 
 # make glossary and acronym list
 #+LATEX_HEADER: \usepackage{morewrites} % required when opening more than 16 files
@@ -166,5 +168,7 @@ C-c C-x @ inserts citations via org-cite. Org-cite in built in.
 
 #+LATEX: \printindex[main]
 #+LATEX: \printindex[authors]
+#+LATEX: \printindex[prompt]
+
 #+LATEX: \printglossary[type=main,title=Glossary]
 
