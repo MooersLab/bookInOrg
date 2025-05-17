@@ -79,23 +79,28 @@ If you want to use pdflatex instead of lualatex, edit accordingly.
         '("lualatex -interaction nonstopmode --shell-escape -synctex=1 -output-directory %o %f"
           "bibtex %b"
           "makeindex -s %b.ist -o %b.ind %b.idx"
-          "makeindex -s %b.ist -o %b.and %b.ain"
           "makeglossaries %b"
           "lualatex -interaction nonstopmode --shell-escape -synctex=1 -output-directory %o %f"
           "lualatex -interaction nonstopmode --shell-escape -synctex=1 -output-directory %o %f")))
 #+end_src
 
 
-The book has subject, author, and writing prompt indices.
-The 
-The imakeidx package eases the creation of two indices when using citar or org-cite for bibliographic management.
+The book has a subject, author, and writing prompt index.
+The imakeidx package eases the creation of three indices. when using citar or org-cite for bibliographic management.
 The subject index keys are in the form of \index[main]{<keyword>}.
 The author index keys are in the form of \index[main]{<Last name, first name>}.
 The writing prompt index keys are in the form of \index[prompt]{<prompt>}.
 
-To significantly ease the addition of both types of cite keys, I recommend adding these functions and keybindings to your init file.el file.
+The writing prompts are reminders to the author to develop or rewrite a passage further when time permits.
+The index includes the prompt and the page where it was added.
+The writing prompt could be included in a to-do list.
+The author can alternatively print out the writing prompts and reflect upon them at a later time while preoccupied with exercising, commuting, standing in line, or waiting for a seminar to begin.
+The writing prompt index can be disabled by commenting out the command to print this index at the bottom of the main.org file.
+
+To significantly ease the addition of the three types of index keys, I recommend adding these functions and keybindings to your init file.el file.
 You enter the keybinding by positioning the cursor where you want the key to be added.
-You will be prompted in the minibuffer for the keyword or author name.
+You will be prompted in the minibuffer for the keyword, author name, or writing prompt.
+You do not have to enclose multi-word answers in quotation marks.
 These functions make creating index keys enjoyable!
 
 #+begin_src elisp
